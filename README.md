@@ -7,3 +7,4 @@
 
 #                         = it improved application performance and better user experience
 #                         = improve and efficient data collection
+#                         = allows multitasking
