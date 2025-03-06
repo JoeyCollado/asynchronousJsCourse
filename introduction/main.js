@@ -11,7 +11,7 @@
 //asynchronus
 setTimeout(() => {
     console.log("1")
-}, 1000);
+}, 1000); //represents seconds
 
 setTimeout(() => {
     console.log("2")
