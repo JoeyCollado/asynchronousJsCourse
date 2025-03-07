@@ -42,7 +42,7 @@ function task6(callback){
         callback()
     }, 6000);
 }
-
+//is a function passed as an argument to another function. This technique allows a function to call another function.
 //callback hell
 //this callback method will run the code syncronously
 task1(() => {
