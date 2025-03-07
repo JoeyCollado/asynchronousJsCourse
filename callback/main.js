@@ -36,9 +36,10 @@ function task5(callback){
     }, 3000);
 }
 
-function task6(){
+function task6(callback){
     setTimeout(() => {
         console.log("5")
+        callback()
     }, 2000);
 }
 
