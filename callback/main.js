@@ -10,7 +10,7 @@ setTimeout(() => {
 
 function task2(callback){
     setTimeout(() => {
-        console.log("1")
+        console.log("3")
         callback();
     }, 2000);
 }
@@ -24,25 +24,27 @@ function task3(callback){
 
 function task4(callback){
     setTimeout(() => {
-        console.log("3")
+        console.log("4")
         callback()
     }, 5000);
 }
 
 function task5(callback){
     setTimeout(() => {
-        console.log("4")
+        console.log("5")
         callback()
     }, 3000);
 }
 
 function task6(callback){
     setTimeout(() => {
-        console.log("5")
+        console.log("6")
         callback()
-    }, 2000);
+    }, 6000);
 }
 
+//callback hell
+//this callback method will run the code syncronously
 task1(() => {
     task2(() => {
         task3(() => {
