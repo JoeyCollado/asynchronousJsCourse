@@ -15,9 +15,10 @@ function task2(callback){
     }, 2000);
 }
 
-function task3(){
+function task3(callback){
     setTimeout(() => {
         console.log("2")
+        callback();
     }, 4000);
 }
 
