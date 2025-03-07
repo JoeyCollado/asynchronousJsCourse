@@ -11,12 +11,14 @@ function task2(){
     setTimeout(() => {
         console.log("1")
     }, 2000);
-    
 }
 
-setTimeout(() => {
-    console.log("2")
-}, 4000);
+function task3(){
+    setTimeout(() => {
+        console.log("2")
+    }, 4000)
+}
+;
 
 setTimeout(() => {
     console.log("3")
