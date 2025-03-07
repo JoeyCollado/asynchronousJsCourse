@@ -31,7 +31,9 @@ function task5(){
     }, 3000);
 }
 
+function task6(){
+    setTimeout(() => {
+        console.log("5")
+    }, 2000);
+}
 
-setTimeout(() => {
-    console.log("5")
-}, 2000);
