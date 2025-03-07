@@ -7,9 +7,12 @@ setTimeout(() => {
 }, 1000); 
 }
 
-setTimeout(() => {
-    console.log("1")
-}, 1000);
+function task2(){
+    setTimeout(() => {
+        console.log("1")
+    }, 2000);
+    
+}
 
 setTimeout(() => {
     console.log("2")
