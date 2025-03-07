@@ -16,13 +16,15 @@ function task2(){
 function task3(){
     setTimeout(() => {
         console.log("2")
-    }, 4000)
+    }, 4000);
 }
-;
 
-setTimeout(() => {
-    console.log("3")
-}, 5000);
+function task4(){
+    setTimeout(() => {
+        console.log("3")
+    }, 5000);
+}
+
 
 setTimeout(() => {
     console.log("4")
