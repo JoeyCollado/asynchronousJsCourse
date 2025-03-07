@@ -43,3 +43,9 @@ function task6(callback){
     }, 2000);
 }
 
+task1(() => {
+    task2(() => {
+        
+    })
+})
+
