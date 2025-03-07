@@ -1,9 +1,10 @@
 //callback = 
 
 
-function task1(){
+function task1(callback){
 setTimeout(() => {
     console.log("1")
+    callback();
 }, 1000); 
 }
 
