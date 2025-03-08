@@ -6,5 +6,7 @@ const showMessage = (callback) => {
 }
 
 const firstMessage = (callback) => {
-    
-}
+    setTimeout(() => {
+        
+    }, timeout);
+} 
