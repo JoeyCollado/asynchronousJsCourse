@@ -7,6 +7,10 @@ const showMessage = (callback) => {
 
 const firstMessage = (callback) => {
     setTimeout(() => {
-        
-    }, timeout);
+        callback();
+    }, 2000);
 } 
+
+const secondMessage = () => {
+    showMessage((`world`))
+};
