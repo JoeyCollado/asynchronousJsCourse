@@ -27,8 +27,12 @@ const promise = new Promise((resolve, reject) => {
    const randomNum = Math.floor(Math.random() * 10);
 
    setTimeout(() => {
-    
-   }, timeout);
+      if(randomNum < 4){
+        resolve("resolved")
+      }else{
+        reject("rejected")
+      }
+   }, 2000);
 })
 
 console.log(promise)
