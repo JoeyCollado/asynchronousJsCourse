@@ -12,5 +12,13 @@
 //rejected = error
 
 const promise = new Promise((resolve, reject) => {
-    
+    const bool = true;
+
+    if(bool){
+        resolve('get booled')
+    }else{
+        reject('not booled')
+    }
 })
+
+console.log(promise)
