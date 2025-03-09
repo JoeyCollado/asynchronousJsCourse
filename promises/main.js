@@ -6,21 +6,11 @@
 // Example: Requesting some data from a server, the promise, promises us  
 // to get that data which we can use in future.
 
+//three states of promise:
+//pending = waiting
+//fulfilled = resolved
+//rejected = error
 
-const showMessage = (callback) => {
-    console.log(callback)
-
-}
-
-const firstMessage = (callback) => {
-    setTimeout(() => {
-        showMessage("hello")
-        callback();
-    }, 2000);
-} 
-
-const secondMessage = () => {
-    showMessage((`world`))
-};
-
-firstMessage(secondMessage)
+const promise = new Promise((resolve, reject) => {
+    
+})
