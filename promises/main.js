@@ -24,7 +24,11 @@
 
 
 const promise = new Promise((resolve, reject) => {
+   const randomNum = Math.floor(Math.random() * 10);
 
+   setTimeout(() => {
+    
+   }, timeout);
 })
 
 console.log(promise)
