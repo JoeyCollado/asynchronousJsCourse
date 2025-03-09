@@ -11,14 +11,20 @@
 //fulfilled = resolved
 //rejected = error
 
-const promise = new Promise((resolve, reject) => {
-    const bool = true;
+// const promise = new Promise((resolve, reject) => {
+//     const bool = true;
+//     //const bool = false;
 
-    if(bool){
-        resolve('get booled')
-    }else{
-        reject('not booled')
-    }
+//     if(bool){
+//         resolve('get booled')
+//     }else{
+//         reject('not booled')
+//     }
+// })
+
+
+const promise = new Promise((resolve, reject) => {
+
 })
 
 console.log(promise)
