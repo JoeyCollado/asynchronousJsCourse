@@ -42,11 +42,26 @@ const promise2 = new Promise((resolve, reject) => {
 })
 
 const promise3 = new Promise((resolve, reject) => {
-  resolve("well done Promise 3 is resolved")
+  reject("well done Promise 3 is rejected")
 })
 
-promise.then((value) => {
+// promise.then((value) => {
+//   console.log(value)
+// }).catch((error) => {
+//   console.log(error)
+// })
+
+//chaining promises
+promise
+.then((value) => {
   console.log(value)
+  return promise2
+})
+.then((value) => {
+  console.log(value)
+  return promise3
 }).catch((error) => {
   console.log(error)
 })
+
+//much better writing instead of callback function as we run into callback hell
