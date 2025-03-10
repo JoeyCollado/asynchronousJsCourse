@@ -35,4 +35,8 @@ const promise = new Promise((resolve, reject) => {
    }, 2000);
 })
 
-console.log(promise)
+promise.then((value) => {
+  console.log(value)
+}).catch((error) => {
+  console.log(error)
+})
