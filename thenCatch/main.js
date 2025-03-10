@@ -41,6 +41,10 @@ const promise2 = new Promise((resolve, reject) => {
   resolve("well done Promise 2 is resolved")
 })
 
+const promise3 = new Promise((resolve, reject) => {
+  resolve("well done Promise 3 is resolved")
+})
+
 promise.then((value) => {
   console.log(value)
 }).catch((error) => {
