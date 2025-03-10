@@ -24,15 +24,21 @@
 
 
 const promise = new Promise((resolve, reject) => {
-   const randomNum = Math.floor(Math.random() * 10);
+  //  const randomNum = Math.floor(Math.random() * 10);
 
-   setTimeout(() => {
-      if(randomNum < 4){
-        resolve("resolved")
-      }else{
-        reject("rejected")
-      }
-   }, 2000);
+  //  setTimeout(() => {
+  //     if(randomNum < 4){
+  //       resolve("resolved")
+  //     }else{
+  //       reject("rejected")
+  //     }
+  //  }, 2000);
+  resolve("well done Promise 1 is resolved")
+})
+
+
+const promise2 = new Promise((resolve, reject) => {
+  resolve("well done Promise 2 is resolved")
 })
 
 promise.then((value) => {
