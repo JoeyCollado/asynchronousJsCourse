@@ -51,17 +51,23 @@ const promise3 = new Promise((resolve, reject) => {
 //   console.log(error)
 // })
 
-//chaining promises
+//bad practices, nesting promises kinda like callback hell
 promise
 .then((value) => {
   console.log(value)
-  return promise2
+  promise2.then((data) => {
+    console.log(data);
+
+  promise3.then((data) => {
+    console.log(data);
+  }).catch((error) => {
+    console.log(error)
+  })
+  })
 })
-.then((value) => {
-  console.log(value)
-  return promise3
-}).catch((error) => {
+.catch((error) => {
   console.log(error)
 })
+
 
 //much better writing instead of callback function as we run into callback hell
