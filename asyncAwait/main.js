@@ -56,16 +56,25 @@ const mix = () => {
   })
 }
 
-//async function
+//async function, writing asynchronous code in synchronouse manner, much more readable
 const bake = async () => {
-  const task1 = await preHeatOven();
-  console.log(task1);
-  const task2 = await addSugar();
-  console.log(task2)
-  const task3 = await addFlour();
-  console.log(task3)
-  const task4 = await mix();
-  console.log(task4)
+
+  try{
+    const task1 = await preHeatOven();
+    console.log(task1);
+    const task2 = await addSugar();
+    console.log(task2)
+    const task3 = await addFlour();
+    console.log(task3)
+    const task4 = await mix();
+    console.log(task4)
+  
+    console.log("enjoy")
+  }
+  catch(error){
+    console.log(error)
+  }
+
 }
 
 bake();
