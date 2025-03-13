@@ -28,12 +28,12 @@ const addSugar = () => {
   })
 }
 
-const preHeatOven = () => {
+const addFlour = () => {
   return new Promise((resolve, reject) => {
      setTimeout(() => {
       const preHeatOven = true;
 
-      if(preHeatOven){
+      if(addFlour){
         resolve("preheat oven to 180 deg")
       }else{
         reject("failed task")
@@ -42,12 +42,12 @@ const preHeatOven = () => {
   })
 }
 
-const preHeatOven = () => {
+const mix = () => {
   return new Promise((resolve, reject) => {
      setTimeout(() => {
-      const preHeatOven = true;
+      const mix = true;
 
-      if(preHeatOven){
+      if(mix){
         resolve("preheat oven to 180 deg")
       }else{
         reject("failed task")
