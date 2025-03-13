@@ -34,7 +34,7 @@ const addFlour = () => {
       const preHeatOven = true;
 
       if(addFlour){
-        resolve("preheat oven to 180 deg")
+        resolve("added flour")
       }else{
         reject("failed task")
       }
@@ -48,10 +48,24 @@ const mix = () => {
       const mix = true;
 
       if(mix){
-        resolve("preheat oven to 180 deg")
+        resolve("mix ingredients")
       }else{
         reject("failed task")
       }
      }, 1000)
   })
 }
+
+//async function
+const bake = async () => {
+  const task1 = await preHeatOven();
+  console.log(task1);
+  const task2 = await addSugar();
+  console.log(task2)
+  const task3 = await addFlour();
+  console.log(task3)
+  const task4 = await mix();
+  console.log(task4)
+}
+
+bake();
