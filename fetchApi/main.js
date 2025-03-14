@@ -51,3 +51,10 @@ fetch('https://dummyjson.com/products/1', {
 .then(data => console.log(data))
 .catch(error => console.log(error))
 */
+
+//fetch api using async/await
+const getAllProducts = async () => {
+  const response = await fetch('https://dummyjson.com/products/'); //fetch url
+  const json = await response.json(); //turn it to json format
+  console.log(json)
+}
