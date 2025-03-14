@@ -1,7 +1,9 @@
 //fetch = allow us to make http request to web server = {'<URL>', {Method property and request we want}} 
 //post = get data
 //put = update existing product
+//Delete = delete data
 
+//POST
 /*
 fetch('https://dummyjson.com/products/add', {
   method: 'POST', //method to use
@@ -20,6 +22,8 @@ fetch('https://dummyjson.com/products/add', {
 .catch(error => console.log(error))
 */
 
+//PUT
+/*
 fetch('https://dummyjson.com/products/1', {
   method: 'PUT', //method to use
   headers: { //content type we want to create
@@ -36,3 +40,14 @@ fetch('https://dummyjson.com/products/1', {
 .then(response => response.json())
 .then(data => console.log(data))
 .catch(error => console.log(error))
+*/
+
+//DELETE
+/*
+fetch('https://dummyjson.com/products/1', {
+  method: 'DELETE', //method to use
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.log(error))
+*/
