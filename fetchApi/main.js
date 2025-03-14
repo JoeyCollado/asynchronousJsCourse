@@ -54,7 +54,14 @@ fetch('https://dummyjson.com/products/1', {
 
 //fetch api using async/await
 const getAllProducts = async () => {
-  const response = await fetch('https://dummyjson.com/products/'); //fetch url
-  const json = await response.json(); //turn it to json format
-  console.log(json)
+
+try{
+    const response = await fetch('https://dummyjson.com/products/'); //fetch url
+    const json = await response.json(); //turn it to json format
+    console.log(json)
+  }catch(error){
+    console.log(error)
+  }
 }
+
+getAllProducts()
