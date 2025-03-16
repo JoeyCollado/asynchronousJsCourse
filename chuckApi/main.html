@@ -5,7 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chuck Norris Jokes Generator</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="main.js"></script>
+    <script src="main.js" defer></script>
+    <style>
+        body {
+            overflow: hidden;
+        }
+
+        /* Image Entrance Animation */
+        @keyframes punchIn {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Button Punch Effect */
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            20% { transform: translateX(-5px); }
+            40% { transform: translateX(5px); }
+            60% { transform: translateX(-3px); }
+            80% { transform: translateX(3px); }
+            100% { transform: translateX(0); }
+        }
+
+        /* Joke Fade-In Effect */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
 </head>
 <body class="bg-slate-900 flex items-center justify-center min-h-screen text-white">
 
@@ -24,11 +62,36 @@
             Load Another
         </button>
 
-        <!-- Image Positioned at the Bottom -->
         <div class="absolute bottom-0 w-full flex justify-center">
-            <img src="chuck.png" class="h-[250px] md:h-[300px] w-auto object-contain drop-shadow-lg" alt="Chuck Norris">
+            <img id="chuckImage" src="chuck.png" class="h-[250px] md:h-[300px] w-auto object-contain drop-shadow-lg opacity-0" alt="Chuck Norris">
         </div>
     </div>
-    
+
+    <script>
+        // Apply the "punch-in" animation to the image on load
+        window.addEventListener("load", () => {
+            const chuckImage = document.getElementById("chuckImage");
+            chuckImage.style.animation = "punchIn 0.8s ease-out forwards";
+        });
+
+        // Add shake" effect 
+        document.getElementById("jokebtn").addEventListener("click", () => {
+            const btn = document.getElementById("jokebtn");
+            btn.style.animation = "shake 0.3s ease-in-out";
+
+            setTimeout(() => {
+                btn.style.animation = "";
+            }, 300);
+        });
+
+        function showNewJoke(jokeText) {
+            const jokeElement = document.getElementById("loadingjoke");
+            jokeElement.classList.remove("fade-in"); // Remove old effect
+            jokeElement.offsetWidth; // Force reflow to restart animation
+            jokeElement.classList.add("fade-in"); // Apply new effect
+            jokeElement.textContent = jokeText; // Update joke text
+        }
+
+    </script>
 </body>
 </html>
