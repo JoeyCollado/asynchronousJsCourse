@@ -6,12 +6,31 @@
     <title>Weather API</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/0601acd3ab.js" crossorigin="anonymous"></script>
+    <style>
+        /* Smooth fade-in animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(10px);
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 </head>
-<body class="bg-orange-500 flex justify-center items-center h-screen">
+<body class="bg-gradient-to-br from-orange-600 to-yellow-500 flex justify-center items-center h-screen">
 
-    <h1 class="absolute text-white md:text-[5rem] text-[3rem] font-bold top-2">World Weather App</h1>
+    <h1 class="absolute text-white md:text-[4rem] text-[2.5rem] font-extrabold top-4 fade-in duration-300 ease-in-out">World Weather App</h1>
 
-    <div id="app" class="text-white text-center bg-orange-400 max-w-[350px] w-full h-auto rounded-xl p-6 shadow-lg">
+    <div id="app" class="text-white text-center bg-white/20 backdrop-blur-lg max-w-[380px] w-full h-auto rounded-2xl p-6 shadow-2xl border border-white/30 fade-in ">
        
        <!-- Pop-up Message -->
        <div id="popupMessage" class="hidden fixed top-5 left-1/2 transform -translate-x-1/2 bg-red-500 text-white px-4 py-2 rounded-md shadow-md">
@@ -21,17 +40,17 @@
        <!-- Search Bar -->
        <div id="searchBar" class="flex justify-center items-center gap-2">
          <input type="text" id="searchBarInput" placeholder="Search by City" 
-                class="rounded-md px-3 py-2 w-3/4 text-black focus:ring-2 focus:ring-orange-300">
+                class="rounded-md px-3 py-2 w-3/4 text-black focus:ring-4 focus:ring-orange-300 transition-all">
          <button onclick="getWeather()" id="searchIcon" 
-                 class="bg-white text-orange-500 px-3 py-2 rounded-md hover:bg-orange-300 transition">
+                 class="bg-white text-orange-500 px-3 py-2 rounded-md hover:bg-orange-400 hover:text-white transition-all duration-300 ease-in-out">
             <i class="fa fa-search"></i>
          </button>
        </div>
  
        <!-- Date & City -->
-       <div id="info" class="mt-4">
+       <div id="info" class="mt-5">
          <p id="date" class="text-sm opacity-80"></p>
-         <h1 id="city" class="text-2xl font-bold"></h1>
+         <h1 id="city" class="text-3xl font-bold drop-shadow-lg"></h1>
        </div>
  
        <!-- Weather Image -->
@@ -40,7 +59,7 @@
        <!-- Weather Description & Temp -->
        <div id="description" class="mt-2 text-lg font-semibold">
           <p id="weatherText"></p>
-          <p id="temp" class="text-3xl font-bold"></p>
+          <p id="temp" class="text-4xl font-bold drop-shadow-lg"></p>
        </div>
  
        <!-- Loading Indicator -->
@@ -48,11 +67,11 @@
  
        <!-- Weather Details -->
        <div id="details" class="flex justify-around mt-6">
-          <div>
+          <div class="p-2 bg-white/20 rounded-lg backdrop-blur-md">
               <h5 class="text-sm">Highs</h5>
               <p id="tempMax" class="text-lg font-bold"></p>
           </div>
-          <div>
+          <div class="p-2 bg-white/20 rounded-lg backdrop-blur-md">
               <h5 class="text-sm">Lows</h5>
               <p id="tempMin" class="text-lg font-bold"></p>
           </div>
@@ -63,5 +82,4 @@
     <script src="main.js"></script>
  
  </body>
- 
 </html>
