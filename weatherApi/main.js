@@ -1,4 +1,5 @@
 // 154ce9c4290971119d1e19bac1a4e4ad
+//058ed497e642b1de36588a02ea05bb17
 
 const date = document.getElementById('date');
 const city = document.getElementById('city');
@@ -26,14 +27,19 @@ const app = document.getElementById('app')
 const getWeather = async () => {
     try {
         const weatherDataFetch = await fetch(
-            'https://api.openweathermap.org/data/2.5/weather?q=London&appid=&units=metric',
-
-            headers: {
+            'https://api.openweathermap.org/data/2.5/weather?q=London&appid=154ce9c4290971119d1e19bac1a4e4ad&units=metric', { 
+                
+                headers: {
                 Accept: "application/json"
             }
-        );
+        });
+
+        const weatherData = await weatherDataFetch.json()
+        console.log(weatherData)
     }
     catch(error){
         console.log(error)
     }
 }
+
+getWeather();
