@@ -12,8 +12,8 @@
     
    <div id="app" class=" text-white text-center bg-slate-500 w-[25%] h-[400px] rounded-xl ml-[35%] mt-[10%]">
       <!--search bar-->
-      <div id="searchBar">
-        <input type="text" id="searchBarInput" placeholder="Search by City">
+      <div id="searchBar" class="pt-[5%]">
+        <input type="text" id="searchBarInput" placeholder="Search by City" class="mt-[5%] rounded-md px-2 py-[2px] mr-[5px] text-black">
         <button id="searchIcon"><i class="fa fa-search" aria-hidden="true"></i></button>
       </div>
 
@@ -23,6 +23,9 @@
         <h1 id="city"></h1>
       </div>
 
+      <!--weather image-->
+      <div id="tempImg"></div>
+
       <!--description-->
       <div id="description"></div>
 
@@ -30,7 +33,7 @@
       <div id="temp"></div>
 
       <!--details-->
-      <div id="details">
+      <div id="details" class="flex gap-[50%] ml-[15%] mt-[75%]">
         <div class="col">
             <div class="info">
                 <h5>Highs</h5>
