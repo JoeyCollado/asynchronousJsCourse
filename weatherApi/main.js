@@ -36,8 +36,10 @@ const app = document.getElementById("app");
 
 const getWeather = async () => {
   try {
+
+    const cityName = document.getElementById('searchBarInput').value;
     const weatherDataFetch = await fetch(
-      "https://api.openweathermap.org/data/2.5/weather?q=London&appid=154ce9c4290971119d1e19bac1a4e4ad&units=metric",
+      `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=154ce9c4290971119d1e19bac1a4e4ad&units=metric`,
       {
         headers: {
           Accept: "application/json",
@@ -59,4 +61,3 @@ const getWeather = async () => {
   }
 };
 
-getWeather();
