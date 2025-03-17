@@ -8,9 +8,9 @@
     <script src="main.js"></script>
     <script src="https://kit.fontawesome.com/0601acd3ab.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body class="bg-slate-900">
     
-   <div id="app">
+   <div id="app" class=" text-white text-center bg-slate-500 w-[25%] h-[400px] rounded-xl ml-[35%] mt-[10%]">
       <!--search bar-->
       <div id="searchBar">
         <input type="text" id="searchBarInput" placeholder="Search by City">
@@ -28,7 +28,24 @@
 
       <!--temp-->
       <div id="temp"></div>
-      
+
+      <!--details-->
+      <div id="details">
+        <div class="col">
+            <div class="info">
+                <h5>Highs</h5>
+                <p id="tempMax"></p>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="info">
+                <h5>Lows</h5>
+                <p id="tempMin"></p>
+            </div>
+        </div>
+      </div>
+
    </div>
 
 </body>
