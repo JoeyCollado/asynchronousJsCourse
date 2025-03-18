@@ -1,11 +1,14 @@
-// POKEDEX API / FETCH API
+// Placeholder Image (Question Mark)
+const placeholderImage = "https://upload.wikimedia.org/wikipedia/commons/9/99/Question_mark.svg";
 
 const getPokemon = async () => {
     try {
         const pokemonName = document.getElementById('searchName').value.trim().toLowerCase();
-        
+        const displayPokemon = document.getElementById('pokemonImg');
+
         if (!pokemonName) {
-            alert("Please enter a Pokémon name!");
+            displayPokemon.src = placeholderImage;
+            displayPokemon.alt = "Unknown Pokémon";
             return;
         }
 
@@ -16,16 +19,17 @@ const getPokemon = async () => {
         }
 
         const data = await response.json();
-        const pokemonImage = data.sprites.front_default;
-
-        const displayPokemon = document.getElementById('pokemonImg');
-        displayPokemon.src = pokemonImage;
+        displayPokemon.src = data.sprites.front_default;
         displayPokemon.alt = pokemonName;
-        displayPokemon.style.display = "block";
     } catch (error) {
         console.error(error);
-        alert("Could not find the Pokémon. Please try again!");
+        document.getElementById('pokemonImg').src = placeholderImage; // Show placeholder if Pokémon is not found
     }
+};
+
+// Set the placeholder image on page load
+window.onload = () => {
+    document.getElementById('pokemonImg').src = placeholderImage;
 };
 
 // Attach event listener to the search button
